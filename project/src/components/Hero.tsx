@@ -1,0 +1,74 @@
+import { ArrowDown } from 'lucide-react';
+
+export default function Hero() {
+  const scrollToAbout = () => {
+    const element = document.getElementById('about');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <section id="hero" className="min-h-screen flex items-center justify-center relative pt-16">
+      <div className="absolute inset-0 bg-black"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          <div className="flex-1 text-center lg:text-left">
+            <div className="inline-block mb-4 px-4 py-2 bg-gray-900/80 text-cyan-400 rounded-full text-sm font-medium border border-cyan-400/30">
+              Curious
+            </div>
+
+            <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+              Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-400">Amartya Kaviraj</span>
+            </h1>
+
+            <p className="text-xl lg:text-2xl text-cyan-300 mb-8 leading-relaxed">
+              AI Automation Enthusiast & Strategic Communicator
+            </p>
+
+            <p className="text-lg text-slate-300 mb-8 max-w-2xl">
+              Master of Science in Applied Entrepreneurship with a passion for AI automation,
+              digital marketing, and transforming complex concepts into compelling narratives.
+            </p>
+
+            <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+              <a
+                href="https://www.linkedin.com/in/amartyakaviraj/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-cyan-700 transition-all hover:scale-105 shadow-lg shadow-cyan-500/50"
+              >
+                Connect on LinkedIn
+              </a>
+              <button
+                onClick={scrollToAbout}
+                className="px-8 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-all hover:scale-105 shadow-lg border border-pink-400/30 hover:border-pink-400/60"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+
+          <div className="flex-1 flex justify-center">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500 to-pink-500 rounded-2xl transform rotate-3 opacity-70"></div>
+              <img
+                src="/240612-BM-famelab-finale-33 copy.jpg"
+                alt="Amartya Kaviraj"
+                className="relative rounded-2xl shadow-2xl w-full max-w-md h-auto object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        onClick={scrollToAbout}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-cyan-400 hover:text-pink-400 transition-colors animate-bounce"
+      >
+        <ArrowDown size={32} />
+      </button>
+    </section>
+  );
+}
